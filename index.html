@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulau Perhentian — Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- header-->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Visit Perhentian</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="activities.html">Activities</a>
+        <a href="accommodation.html">Accommodation</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+ <!-- ======= Hero Video ======= -->
+<section id="hero" aria-label="Hero" style="position:relative; width:100%; height:60vh; min-height:420px; overflow:hidden; display:block;">
+
+  <video id="heroVideo"
+         autoplay
+         muted
+         loop
+         playsinline
+         preload="auto"
+         poster="Images/home.jpg"
+         style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;">
+    <source src="Images/index_VideoHero.mp4" type="video/mp4">
+    <img src="Images/home.jpg" alt="Pulau Perhentian beach" style="width:100%; height:auto;">
+  </video>
+
+  <div style="position:relative; z-index:2; max-width:980px; margin:0 auto; padding:48px 20px; display:flex; align-items:center; justify-content:center; height:100%;">
+    
+    <div class="hero-glass" style="width:100%; background:rgba(255,255,255,0.06); backdrop-filter: blur(8px) saturate(1.05); border-radius:12px; box-shadow:0 8px 32px rgba(6,18,30,0.35); padding:28px 32px; text-align:center; color:#fff;">
+
+      <h1 style="font-size:2.6rem; margin:0 0 12px; font-weight:800; color:#fff; text-shadow:0 2px 6px rgba(0,0,0,0.25);">
+        Pulau Perhentian
+      </h1>
+
+      <p style="margin:0 0 18px; max-width:760px; margin-left:auto; margin-right:auto; color:#f2f7f8; font-size:1.05rem; line-height:1.5;">
+        Turquoise waters, untouched coral gardens, and soft white sands await across a twin island paradise.
+      </p>
+
+      <div style="display:inline-flex; gap:12px; align-items:center; margin-top:6px; justify-content:center;">
+        <a href="gallery.html" class="hero-btn" style="display:inline-block; padding:10px 18px; border-radius:8px; background:#0b6aa0; color:#fff; font-weight:700; text-decoration:none; box-shadow:0 6px 12px rgba(11,106,160,0.24);">
+          Uncover the Beauty
+        </a>
+
+        <a href="activities.html" class="hero-btn" style="display:inline-block; padding:10px 18px; border-radius:8px; background:#0b6aa0; color:#fff; font-weight:700; text-decoration:none; box-shadow:0 6px 12px rgba(11,106,160,0.16);">
+          Adventure Awaits
+        </a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Video Autoplay -->
+<script>
+  (function () {
+    try {
+      const v = document.getElementById('heroVideo');
+      if (!v) return;
+
+      // Respect "prefers-reduced-motion"
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        v.removeAttribute('autoplay');
+        v.pause();
+      }
+
+      // Some browsers might block autoplay — try to play, otherwise stay muted and paused.
+      const playPromise = v.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // ignore errors (user gesture required in some contexts)
+          v.pause();
+        });
+      }
+    } catch (e) {
+      // fail silently
+      console.warn('Hero video script error', e);
+    }
+  })();
+</script>
+<!-- ======= end hero block ======= -->
+
+  <!-- About Perhentian -->
+  <main>
+    <div class="container" style="padding:28px 20px 40px;">
+      <h2 class="section-title">About Perhentian Islands</h2>
+      <p>Nestled along the east coast of Terengganu, the Perhentian Islands are among Malaysia’s most breathtaking island destinations. Crystal-clear waters, vibrant coral gardens, and unspoiled beaches make them a favourite for snorkeling, scuba diving, and marine wildlife encounters.</p>
+      <p style="margin-top:12px;">Perhentian Besar offers serene, resort-style relaxation, while Perhentian Kecil brings lively beach culture and adventure. Together, they create a paradise where nature, tranquility, and island charm come together.</p>
+
+      <div class="cards-row" style="margin-top:28px;">
+        <div class="card">
+          <h4>Top Activities</h4>
+          <p>Snorkeling, scuba diving, jungle trekking & kayak trips.</p>
+          <div style="margin-top:10px"><a href="activities.html">See activities →</a></div>
+        </div>
+
+        <div class="card">
+          <h4>Where to Stay</h4>
+          <p>From boutique resorts to grand-luxury stay.</p>
+          <div style="margin-top:10px"><a href="accommodation.html">See accommodation →</a></div>
+        </div>
+
+        <div class="card">
+          <h4>Contact & Bookings</h4>
+          <p>Questions about travel, tours, or availability? Give us a shout.</p>
+          <div style="margin-top:10px"><a href="contact.html">Contact us →</a></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div>© 2025 · CSC584 NBCS2406A • Developed by Abdul Qaiyum <a href="developer.html">(About Developer)</a> for Mr. Muhd Eizan Shafiq</div>
+      <div><a class="admin-login" href="admin/login.html">Admin Login</a></div>
+    </div>
+  </footer>
+
+
+  <!-- ==ADMIN LOGIN Popup -->
+<div id="adminModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-box" role="document" aria-labelledby="modalTitle">
+    <h2 id="modalTitle" class="modal-title">Admin Login</h2>
+
+    <label class="modal-label" for="adminUser">Username</label>
+    <input type="text" id="adminUser" placeholder="Enter username" autocomplete="username" required>
+
+    <label class="modal-label" for="adminPass">Password</label>
+    <input type="password" id="adminPass" placeholder="Enter password" autocomplete="current-password" required>
+
+    <div class="show-pass">
+      <input type="checkbox" id="togglePass">
+      <label for="togglePass" style="margin:0; color:#fff; font-weight:600;">Show Password</label>
+    </div>
+
+    <p class="auth-note">For authorized personnel only.</p>
+
+    <div class="modal-actions">
+      <button id="cancelLogin" class="btn-cancel" type="button">Cancel</button>
+      <button id="submitLogin" class="btn-login" type="button">Login</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  // Elements
+  const modal = document.getElementById('adminModal');
+  const userField = document.getElementById('adminUser');
+  const passField = document.getElementById('adminPass');
+  const togglePass = document.getElementById('togglePass');
+  const cancelBtn = document.getElementById('cancelLogin');
+  const submitBtn = document.getElementById('submitLogin');
+
+  // Helper: open modal
+  function openModal() {
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+    // small delay then focus
+    setTimeout(() => userField.focus(), 120);
+    // prevent page scroll while open
+    document.documentElement.style.overflow = 'hidden';
+  }
+
+  // Helper: close modal
+  function closeModal() {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    document.documentElement.style.overflow = '';
+  }
+
+  // Attach toggle to a variety of selectors so it works regardless of footer markup
+  function attachOpenHandlers() {
+    // explicit id or class if present
+    const byId = document.getElementById('adminLoginBtn');
+    const byClass = document.querySelectorAll('.admin-login-btn');
+    const byHref = document.querySelectorAll('a[href="#admin"], a[href="#login"]');
+
+    if (byId) byId.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+
+    byClass.forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+    byHref.forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+
+    // Fallback: any <a> whose visible trimmed text equals "Admin Login" (case-insensitive)
+    document.querySelectorAll('a').forEach(a => {
+      try {
+        const txt = a.textContent.trim().toLowerCase();
+        if (txt === 'admin login' || txt === 'adminlogin') {
+          a.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+        }
+      } catch (err) { /* ignore */ }
+    });
+  }
+
+  // Close on backdrop click (only when clicking outside the box)
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // ESC key to close, arrow/tab behaviour kept
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('show')) return;
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Cancel button
+  cancelBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeModal();
+  });
+
+  // Show/hide password
+  togglePass.addEventListener('change', () => {
+    passField.type = togglePass.checked ? 'text' : 'password';
+  });
+
+  // Simple login check (can be replaced by real auth later)
+  submitBtn.addEventListener('click', () => {
+    const user = userField.value.trim();
+    const pass = passField.value.trim();
+    if (user === 'admin' && pass === 'admin123') {
+      // success
+      alert('Login successful');
+      closeModal();
+    } else {
+      alert('Incorrect username or password');
+      passField.focus();
+    }
+  });
+
+  // Initialize - attach open handlers after small delay to ensure DOM elements exist
+  // (works even if script runs in head/footer)
+  window.addEventListener('load', () => {
+    attachOpenHandlers();
+  });
+
+  // Also attempt to attach immediately in case DOM is already loaded
+  attachOpenHandlers();
+})();
+</script>
+
+<style>
+/* --- Overlay --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 220ms ease, visibility 220ms;
+  z-index: 2000;
+}
+
+.modal-overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* --- Glass box --- */
+.modal-box {
+  width: 360px;
+  max-width: calc(100% - 32px);
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(14px) saturate(1.06);
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 12px 40px rgba(6,18,30,0.5);
+  transform: translateY(0);
+  color: #ffffff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Title */
+.modal-title {
+  margin: 0 0 12px 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Labels */
+.modal-label {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Inputs */
+.modal-box input[type="text"],
+.modal-box input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 6px;
+  background: rgba(255,255,255,0.92); /* clear high-contrast input */
+  color: #1b2330;
+  font-size: 0.95rem;
+}
+
+/* Show password row */
+.show-pass {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+.show-pass input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* Auth note */
+.auth-note {
+  margin: 6px 0 14px 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Actions */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancel,
+.btn-login {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  min-width: 88px;
+}
+
+.btn-cancel {
+  background: #f1f5f9;
+  color: #0f1724;
+}
+
+.btn-login {
+  background: #0b79c1;
+  color: #fff;
+}
+
+.btn-login:hover {
+  background: #0a66ad;
+}
+
+/* small screens tweak */
+@media (max-width: 420px) {
+  .modal-box { padding: 18px; width: 92%; border-radius: 12px; }
+  .btn-cancel, .btn-login { min-width: 72px; padding: 8px 12px; }
+}
+</style>
+<!-- ==ADMIN LOGIN Popup -->
+
+</body>
+</html>

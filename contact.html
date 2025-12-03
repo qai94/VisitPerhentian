@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Pulau Perhentian</title>
+
+
+  <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    /* Centered card layout */
+    .contact-wrap { max-width:980px; margin:30px auto 80px; padding:0 20px; }
+    .contact-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 12px 36px rgba(6,18,30,0.08);
+      border: 1px solid rgba(6,18,30,0.04);
+    }
+    .contact-grid { display:grid; grid-template-columns: 1fr; gap:18px; align-items:start; }
+    /* Column split inside the card: intro (left) + form (right) */
+    @media (min-width:900px) {
+      .contact-grid { grid-template-columns: 360px 1fr; gap:28px; }
+    }
+
+    .contact-intro h3 { margin:0 0 8px 0; color:var(--brand); font-size:1.1rem; }
+    .contact-intro p { margin:0; color:var(--muted); line-height:1.5; }
+
+    form.contact-form { display:flex; flex-direction:column; gap:12px; }
+    .form-row { display:flex; gap:12px; flex-wrap:wrap; }
+    .form-group { display:flex; flex-direction:column; gap:6px; width:100%; }
+    .form-group.half { width:48%; min-width:180px; }
+    label { font-weight:700; font-size:0.95rem; color:#14343d; }
+    input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+      padding:10px 12px; border-radius:8px; border:1px solid rgba(6,18,30,0.06); font-size:0.95rem;
+      background:#fff; color:#09303b;
+    }
+    textarea { min-height:120px; resize:vertical; }
+    .radio-group { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+    .small-note { font-size:0.9rem; color:var(--muted); margin-top:6px; }
+
+    /* action row */
+    .actions { display:flex; gap:12px; justify-content:flex-end; margin-top:8px; }
+    button.btn { padding:10px 14px; border-radius:8px; font-weight:700; border:0; cursor:pointer; }
+    button.btn.primary { background:var(--brand); color:#fff; box-shadow: 0 8px 20px rgba(11,70,112,0.12); }
+    button.btn.secondary { background:transparent; border:1px solid rgba(6,18,30,0.06); color:var(--brand); }
+
+    /* error states */
+    .error { border-color: #d9534f !important; }
+    .field-error { color:#d9534f; font-size:0.9rem; margin-top:6px; display:none; }
+    .field-error.show { display:block; }
+
+    /* success message */
+    .form-success { background: #e9fbf6; border:1px solid rgba(6,140,96,0.08); padding:18px; border-radius:10px; color:#065a48; font-weight:700; display:none; }
+
+    /* small responsive tweak */
+    @media (max-width:420px) {
+      .form-group.half { width:100%; }
+      .actions { justify-content:stretch; flex-direction:column-reverse; }
+      .actions button { width:100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header-->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Visit Perhentian</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="activities.html">Activities</a>
+        <a href="accommodation.html">Accommodation</a>
+        <a href="contact.html" aria-current="page">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO-->
+  <section class="page-hero" style="background-image:url('Images/perhentianPanoramic.jpg');">
+    <div class="hero-inner">
+      <h1>We’d Love to Hear From You</h1>
+      <p>Questions, booking enquiries or something special you want to arrange. Tell us and we'll help plan your perfect trip.</p>
+    </div>
+  </section>
+
+  <!-- Main: centered contact card -->
+  <main>
+    <div class="contact-wrap">
+
+      <div class="contact-card" role="region" aria-label="Contact form card">
+        <div class="contact-grid">
+          <!-- Left: Intro / contact details -->
+          <div class="contact-intro">
+            <h3>Contact & Bookings</h3>
+            <p class="small-note">All fields are required. We normally reply within 24 hours. If your enquiry is urgent, please use the phone number below.</p>
+
+        <div style="margin-top:14px;">
+                <div style="font-weight:700; margin-bottom:6px;">Phone</div>
+                <a href="tel:+60125157495" class="small-note" style="text-decoration:none;"> +60 12-515 7495 (Call)</a>
+            </div>
+
+            <div style="margin-top:12px;">
+                <div style="font-weight:700; margin-bottom:6px;">WhatsApp</div>
+                <a href="https://wa.me/0125157495" target="_blank" class="small-note" style="text-decoration:none;"> Chat on WhatsApp &rarr;</a>
+            </div>
+
+            <div style="margin-top:12px;">
+                <div style="font-weight:700; margin-bottom:6px;">Email</div>
+                <a href="mailto:info@pulauperhentian.example" class="small-note" style="text-decoration:none;">info@pulauperhentian.example</a>
+            </div>
+
+            <!-- Privacy Notice -->
+            <p class="small-note" style="margin-top:36px; font-weight:600;">Privacy Notice:</p>
+            <p class="small-note" style="margin-top:6px;">
+                By submitting you consent to us storing and using your details to respond to your enquiry.
+                Read our <a href="privacy.html">privacy policy</a>.
+            </p>
+          </div>
+
+          <!-- Right: Form -->
+          <div>
+            <div id="successMsg" class="form-success" role="status" aria-live="polite">
+              Thank you — your message has been received. We will contact you shortly.
+            </div>
+
+            <form id="contactForm" class="contact-form" novalidate>
+              <!-- Full name + phone -->
+              <div class="form-row">
+                <div class="form-group half">
+                  <label for="fullName">Full name *</label>
+                  <input id="fullName" name="name" type="text" required autocomplete="name" maxlength="150" />
+                  <div id="err-name" class="field-error">Please enter your full name.</div>
+                </div>
+
+                <div class="form-group half">
+                  <label for="phone">Contact number *</label>
+                  <input id="phone" name="phone" type="tel" required placeholder="+60 12 345 6789"
+                         pattern="^\+?[0-9\s\-]{7,32}$" inputmode="tel" maxlength="32" />
+                  <div id="err-phone" class="field-error">Please enter a valid phone number (digits and + allowed).</div>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email address *</label>
+                  <input id="email" name="email" type="email" required autocomplete="email" maxlength="255" />
+                  <div id="err-email" class="field-error">Please enter a valid email address.</div>
+                </div>
+              </div>
+
+              <!-- Gender -->
+              <div class="form-row" role="group" aria-labelledby="genderLabel">
+                <div class="form-group">
+                  <label id="genderLabel">Gender *</label>
+                  <div class="radio-group" role="radiogroup" aria-required="true">
+                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+                  </div>
+                  <div id="err-gender" class="field-error">Please choose your gender.</div>
+                </div>
+              </div>
+
+              <!-- How did you hear about us -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="source">How did you know about us? *</label>
+                  <select id="source" name="source" required>
+                    <option value="">-- Select --</option>
+                    <option>Advertisement</option>
+                    <option>Family</option>
+                    <option>Friends</option>
+                    <option>Internet</option>
+                    <option>Others</option>
+                  </select>
+                  <div id="err-source" class="field-error">Please select an option.</div>
+
+                  <!-- progressive disclosure for 'Others' -->
+                  <div id="otherWrapper" style="margin-top:8px; display:none;">
+                    <input id="sourceOther" name="source_other" type="text" placeholder="Please tell us" maxlength="100" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Message -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="message">Message *</label>
+                  <textarea id="message" name="message" required minlength="10" maxlength="2000"
+                            placeholder="Tell us a bit about your enquiry (travel dates, number of people, requests etc.)"></textarea>
+                  <div id="err-message" class="field-error">Please write a short message (at least 10 characters).</div>
+                </div>
+              </div>
+
+              <!-- honeypot (hidden) for basic spam protection -->
+              <input type="text" name="_hp" id="_hp" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;" tabindex="-1" autocomplete="off">
+
+              <!-- actions -->
+              <div class="actions">
+                <button type="reset" class="btn secondary" id="btnClear">Clear</button>
+                <button type="submit" class="btn primary" id="btnSubmit">Submit</button>
+              </div>
+
+              <!-- small hint -->
+              <div class="small-note" style="margin-top:10px;">All fields are required. We do not share your details with third parties.</div>
+            </form>
+          </div>
+        </div>
+      </div> <!-- /.contact-card -->
+
+    </div>
+  </main>
+
+  <!-- Footer-->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© 2025 · CSC584 NBCS2406A • Developed by Abdul Qaiyum <a href="developer.html">(About Developer)</a> for Mr. Muhd Eizan Shafiq</div>
+      <div><a class="admin-login" href="admin/login.html">Admin Login</a></div>
+    </div>
+  </footer>
+
+  <!-- Lightweight JS for validation, progressive disclosure, and success simulation -->
+  <script>
+    (function () {
+      const form = document.getElementById('contactForm');
+      const successBox = document.getElementById('successMsg');
+
+      const fields = {
+        name: document.getElementById('fullName'),
+        phone: document.getElementById('phone'),
+        email: document.getElementById('email'),
+        gender: form.elements['gender'],
+        source: document.getElementById('source'),
+        sourceOther: document.getElementById('sourceOther'),
+        message: document.getElementById('message'),
+        honeypot: document.getElementById('_hp')
+      };
+
+      // show / hide 'Other' input
+      fields.source.addEventListener('change', () => {
+        const otherWrapper = document.getElementById('otherWrapper');
+        if (fields.source.value === 'Others') {
+          otherWrapper.style.display = 'block';
+          fields.sourceOther.setAttribute('required', 'required');
+        } else {
+          otherWrapper.style.display = 'none';
+          fields.sourceOther.removeAttribute('required');
+          fields.sourceOther.value = '';
+        }
+      });
+
+      // helper to show error near field
+      function showError(id, msg) {
+        const el = document.getElementById(id);
+        el.textContent = msg;
+        el.classList.add('show');
+      }
+      function hideError(id) {
+        const el = document.getElementById(id);
+        el.classList.remove('show');
+      }
+
+      // validate on submit
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+
+        // hide previous errors
+        document.querySelectorAll('.field-error').forEach(e => e.classList.remove('show'));
+        document.querySelectorAll('input, select, textarea').forEach(i => i.classList.remove('error'));
+
+        let ok = true;
+
+        // simple checks (HTML5 also checks required/pattern)
+        if (!fields.name.value.trim()) {
+          showError('err-name', 'Please enter your full name.');
+          fields.name.classList.add('error');
+          ok = false;
+        }
+
+        const phonePattern = /^\+?[0-9\s\-]{7,32}$/;
+        if (!phonePattern.test(fields.phone.value.trim())) {
+          showError('err-phone', 'Please enter a valid phone number (digits and + allowed).');
+          fields.phone.classList.add('error');
+          ok = false;
+        }
+
+        if (!fields.email.checkValidity()) {
+          showError('err-email', 'Please enter a valid email address.');
+          fields.email.classList.add('error');
+          ok = false;
+        }
+
+        // gender: check at least one radio checked
+        const genderChecked = Array.from(form.elements['gender'] || []).some(r => r.checked);
+        if (!genderChecked) {
+          showError('err-gender', 'Please choose your gender.');
+          ok = false;
+        }
+
+        if (!fields.source.value) {
+          showError('err-source', 'Please tell us how you heard about us.');
+          fields.source.classList.add('error');
+          ok = false;
+        } else if (fields.source.value === 'Others' && !fields.sourceOther.value.trim()) {
+          showError('err-source', 'Please tell us how you heard about us.');
+          fields.sourceOther.classList.add('error');
+          ok = false;
+        }
+
+        if (!fields.message.value.trim() || fields.message.value.trim().length < 10) {
+          showError('err-message', 'Please write a short message (at least 10 characters).');
+          fields.message.classList.add('error');
+          ok = false;
+        }
+
+        // honeypot should be empty
+        if (fields.honeypot.value) {
+          // likely bot — silently fail
+          return;
+        }
+
+        if (!ok) {
+          // focus first error field
+          const firstError = document.querySelector('.error, .field-error.show');
+          if (firstError) {
+            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (firstError.focus) firstError.focus();
+          }
+          return;
+        }
+
+        
+        successBox.style.display = 'block';
+        form.style.display = 'none';
+
+
+
+        // In Assignment 2, replace this with a real POST to a servlet / endpoint.
+      });
+
+      // clear button resets and hides success if shown
+      const btnClear = document.getElementById('btnClear');
+      btnClear.addEventListener('click', () => {
+        document.querySelectorAll('.field-error').forEach(e => e.classList.remove('show'));
+        document.querySelectorAll('input, select, textarea').forEach(i => i.classList.remove('error'));
+        successBox.style.display = 'none';
+        if (form.style.display === 'none') form.style.display = 'flex';
+      });
+
+    })();
+  </script>
+  
+
+  <!-- ==ADMIN LOGIN PopUp -->
+<div id="adminModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-box" role="document" aria-labelledby="modalTitle">
+    <h2 id="modalTitle" class="modal-title">Admin Login</h2>
+
+    <label class="modal-label" for="adminUser">Username</label>
+    <input type="text" id="adminUser" placeholder="Enter username" autocomplete="username" required>
+
+    <label class="modal-label" for="adminPass">Password</label>
+    <input type="password" id="adminPass" placeholder="Enter password" autocomplete="current-password" required>
+
+    <div class="show-pass">
+      <input type="checkbox" id="togglePass">
+      <label for="togglePass" style="margin:0; color:#fff; font-weight:600;">Show Password</label>
+    </div>
+
+    <p class="auth-note">For authorized personnel only.</p>
+
+    <div class="modal-actions">
+      <button id="cancelLogin" class="btn-cancel" type="button">Cancel</button>
+      <button id="submitLogin" class="btn-login" type="button">Login</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  // Elements
+  const modal = document.getElementById('adminModal');
+  const userField = document.getElementById('adminUser');
+  const passField = document.getElementById('adminPass');
+  const togglePass = document.getElementById('togglePass');
+  const cancelBtn = document.getElementById('cancelLogin');
+  const submitBtn = document.getElementById('submitLogin');
+
+  // Helper: open modal
+  function openModal() {
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+    // small delay then focus
+    setTimeout(() => userField.focus(), 120);
+    // prevent page scroll while open
+    document.documentElement.style.overflow = 'hidden';
+  }
+
+  // Helper: close modal
+  function closeModal() {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    document.documentElement.style.overflow = '';
+  }
+
+  // Attach toggle to a variety of selectors so it works regardless of footer markup
+  function attachOpenHandlers() {
+    // explicit id or class if present
+    const byId = document.getElementById('adminLoginBtn');
+    const byClass = document.querySelectorAll('.admin-login-btn');
+    const byHref = document.querySelectorAll('a[href="#admin"], a[href="#login"]');
+
+    if (byId) byId.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+
+    byClass.forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+    byHref.forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+
+    // Fallback: any <a> whose visible trimmed text equals "Admin Login" (case-insensitive)
+    document.querySelectorAll('a').forEach(a => {
+      try {
+        const txt = a.textContent.trim().toLowerCase();
+        if (txt === 'admin login' || txt === 'adminlogin') {
+          a.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+        }
+      } catch (err) { /* ignore */ }
+    });
+  }
+
+  // Close on backdrop click (only when clicking outside the box)
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // ESC key to close, arrow/tab behaviour kept
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('show')) return;
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Cancel button
+  cancelBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeModal();
+  });
+
+  // Show/hide password
+  togglePass.addEventListener('change', () => {
+    passField.type = togglePass.checked ? 'text' : 'password';
+  });
+
+  // Simple login check (can be replaced by real auth later)
+  submitBtn.addEventListener('click', () => {
+    const user = userField.value.trim();
+    const pass = passField.value.trim();
+    if (user === 'admin' && pass === 'admin123') {
+      // success
+      alert('Login successful');
+      closeModal();
+    } else {
+      alert('Incorrect username or password');
+      passField.focus();
+    }
+  });
+
+  // Initialize - attach open handlers after small delay to ensure DOM elements exist
+  // (works even if script runs in head/footer)
+  window.addEventListener('load', () => {
+    attachOpenHandlers();
+  });
+
+  // Also attempt to attach immediately in case DOM is already loaded
+  attachOpenHandlers();
+})();
+</script>
+
+<style>
+/* --- Overlay --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 220ms ease, visibility 220ms;
+  z-index: 2000;
+}
+
+.modal-overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* --- Glass box --- */
+.modal-box {
+  width: 360px;
+  max-width: calc(100% - 32px);
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(14px) saturate(1.06);
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 12px 40px rgba(6,18,30,0.5);
+  transform: translateY(0);
+  color: #ffffff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Title */
+.modal-title {
+  margin: 0 0 12px 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Labels */
+.modal-label {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Inputs */
+.modal-box input[type="text"],
+.modal-box input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 6px;
+  background: rgba(255,255,255,0.92); /* clear high-contrast input */
+  color: #1b2330;
+  font-size: 0.95rem;
+}
+
+/* Show password row */
+.show-pass {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+.show-pass input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* Auth note */
+.auth-note {
+  margin: 6px 0 14px 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Actions */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancel,
+.btn-login {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  min-width: 88px;
+}
+
+.btn-cancel {
+  background: #f1f5f9;
+  color: #0f1724;
+}
+
+.btn-login {
+  background: #0b79c1;
+  color: #fff;
+}
+
+.btn-login:hover {
+  background: #0a66ad;
+}
+
+/* small screens tweak */
+@media (max-width: 420px) {
+  .modal-box { padding: 18px; width: 92%; border-radius: 12px; }
+  .btn-cancel, .btn-login { min-width: 72px; padding: 8px 12px; }
+}
+</style>
+
+</body>
+</html>

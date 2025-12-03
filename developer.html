@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Developer — Pulau Perhentian</title>
+  <link rel="stylesheet" href="style.css" />
+  
+  <style>
+    
+    html {
+      overflow-y: scroll;
+    }
+
+    
+    
+    .dev-wrapper {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        background: linear-gradient(135deg, #f6f7f8 0%, #e9f6fb 100%);
+    }
+
+    .dev-card {
+        background: #ffffff;
+        width: 100%;
+        max-width: 480px; 
+        border-radius: 24px;
+        padding: 40px 30px;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(6, 18, 30, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        
+        /* Entrance Animation */
+        opacity: 0;
+        transform: translateY(30px);
+        animation: slideUpFade 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    .dev-img-container {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        margin: 0 auto 24px;
+    }
+
+    .dev-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid #ffffff;
+        box-shadow: 0 8px 24px rgba(11, 95, 138, 0.25);
+    }
+
+    .dev-name {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--brand-dark, #084a6a);
+        margin: 0 0 8px;
+    }
+
+    .dev-id-badge {
+        display: inline-block;
+        background: #e9f6fb;
+        color: var(--brand, #0b5f8a);
+        font-size: 0.9rem;
+        font-weight: 700;
+        padding: 6px 14px;
+        border-radius: 50px;
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
+    }
+
+    .dev-bio {
+        font-size: 1rem;
+        color: #5d6d7e;
+        line-height: 1.6;
+        margin-bottom: 32px;
+        font-style: italic;
+    }
+
+    /* Info Grid */
+    .dev-info-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: left;
+        background: #fafbfc;
+        padding: 24px;
+        border-radius: 16px;
+        border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .info-item {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .info-icon {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border-radius: 8px;
+        color: var(--brand);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        font-size: 1.1rem;
+    }
+
+    .info-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #99aab5;
+        font-weight: 600;
+        margin-bottom: 2px;
+    }
+
+    /* Unified link style for value class */
+    .value {
+        font-size: 1rem;
+        color: #334e58;
+        font-weight: 500;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+    
+    /* Hover effect for links */
+    a.value:hover {
+        color: var(--brand, #0b5f8a);
+        text-decoration: underline;
+    }
+
+    @keyframes slideUpFade {
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @media (max-width: 480px) {
+        .dev-card { padding: 30px 20px; }
+        .dev-name { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Visit Perhentian</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="activities.html">Activities</a>
+        <a href="accommodation.html">Accommodation</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="dev-wrapper">
+      
+      <div class="dev-card">
+        
+        <div class="dev-img-container">
+            <img src="Images/developer_qaiyum.png" alt="Abdul Qaiyum" class="dev-img">
+        </div>
+
+        <h1 class="dev-name">Abdul Qaiyum</h1>
+        <div class="dev-id-badge">Student ID: 2023780145</div>
+
+        <p class="dev-bio">
+            "A Computer Science student at UiTM Malaysia with a passion for Data Science and Machine Learning."
+         </p>
+
+        <div class="dev-info-list">
+            
+            <div class="info-item">
+                <div class="info-icon">📞</div>
+                <div class="info-text">
+                    <span class="label">Contact Number</span>
+                    <a href="tel:+60125157495" class="value">+60 12-515 7495</a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">💬</div>
+                <div class="info-text">
+                    <span class="label">WhatsApp</span>
+                    <a href="https://wa.me/0125157495" target="_blank" class="value">
+                        Chat on WhatsApp &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">✉️</div>
+                <div class="info-text">
+                    <span class="label">Email Address</span>
+                    <a href="mailto:2023780145@student.uitm.edu.my" class="value">2023780145@student.uitm.edu.my</a>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">🎓</div>
+                <div class="info-text">
+                    <span class="label">Class Group</span>
+                    <span class="value">CS230 / NBCS2406A</span>
+                </div>
+            </div>
+
+        </div>
+        
+        <div style="margin-top: 24px; font-size: 0.9rem; color: #8899a6;">
+            Designed for CSC584 Assignment #1
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+        <div>© 2025 · CSC584 NBCS2406A • Developed by Abdul Qaiyum <a href="developer.html" style="font-weight:bold; color:#0b5f8a;">(About Developer)</a> for Mr. Muhd Eizan Shafiq</div>
+        <div><a class="admin-login" href="admin/login.html">Admin Login</a></div>
+    </div>
+  </footer>
+
+<div id="adminModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-box" role="document" aria-labelledby="modalTitle">
+    <h2 id="modalTitle" class="modal-title">Admin Login</h2>
+
+    <label class="modal-label" for="adminUser">Username</label>
+    <input type="text" id="adminUser" placeholder="Enter username" autocomplete="username" required>
+
+    <label class="modal-label" for="adminPass">Password</label>
+    <input type="password" id="adminPass" placeholder="Enter password" autocomplete="current-password" required>
+
+    <div class="show-pass">
+      <input type="checkbox" id="togglePass">
+      <label for="togglePass" style="margin:0; color:#fff; font-weight:600;">Show Password</label>
+    </div>
+
+    <p class="auth-note">For authorized personnel only.</p>
+
+    <div class="modal-actions">
+      <button id="cancelLogin" class="btn-cancel" type="button">Cancel</button>
+      <button id="submitLogin" class="btn-login" type="button">Login</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  // Elements
+  const modal = document.getElementById('adminModal');
+  const userField = document.getElementById('adminUser');
+  const passField = document.getElementById('adminPass');
+  const togglePass = document.getElementById('togglePass');
+  const cancelBtn = document.getElementById('cancelLogin');
+  const submitBtn = document.getElementById('submitLogin');
+
+  // Helper: open modal
+  function openModal() {
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+    // small delay then focus
+    setTimeout(() => userField.focus(), 120);
+    // prevent page scroll while open
+    document.documentElement.style.overflow = 'hidden';
+  }
+
+  // Helper: close modal
+  function closeModal() {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    document.documentElement.style.overflow = '';
+  }
+
+  // Attach toggle to a variety of selectors so it works regardless of footer markup
+  function attachOpenHandlers() {
+    // explicit id or class if present
+    const byId = document.getElementById('adminLoginBtn');
+    const byClass = document.querySelectorAll('.admin-login-btn');
+    const byHref = document.querySelectorAll('a[href="#admin"], a[href="#login"]');
+
+    if (byId) byId.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+
+    byClass.forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+    byHref.forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+
+    // Fallback: any <a> whose visible trimmed text equals "Admin Login" (case-insensitive)
+    document.querySelectorAll('a').forEach(a => {
+      try {
+        const txt = a.textContent.trim().toLowerCase();
+        if (txt === 'admin login' || txt === 'adminlogin') {
+          a.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+        }
+      } catch (err) { /* ignore */ }
+    });
+  }
+
+  // Close on backdrop click (only when clicking outside the box)
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // ESC key to close, arrow/tab behaviour kept
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('show')) return;
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Cancel button
+  cancelBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeModal();
+  });
+
+  // Show/hide password
+  togglePass.addEventListener('change', () => {
+    passField.type = togglePass.checked ? 'text' : 'password';
+  });
+
+  // Simple login check (can be replaced by real auth later)
+  submitBtn.addEventListener('click', () => {
+    const user = userField.value.trim();
+    const pass = passField.value.trim();
+    if (user === 'admin' && pass === 'admin123') {
+      // success
+      alert('Login successful');
+      closeModal();
+    } else {
+      alert('Incorrect username or password');
+      passField.focus();
+    }
+  });
+
+  // Initialize - attach open handlers after small delay to ensure DOM elements exist
+  // (works even if script runs in head/footer)
+  window.addEventListener('load', () => {
+    attachOpenHandlers();
+  });
+
+  // Also attempt to attach immediately in case DOM is already loaded
+  attachOpenHandlers();
+})();
+</script>
+
+<style>
+/* --- Overlay --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 220ms ease, visibility 220ms;
+  z-index: 2000;
+}
+
+.modal-overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* --- Glass box --- */
+.modal-box {
+  width: 360px;
+  max-width: calc(100% - 32px);
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(14px) saturate(1.06);
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 12px 40px rgba(6,18,30,0.5);
+  transform: translateY(0);
+  color: #ffffff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Title */
+.modal-title {
+  margin: 0 0 12px 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Labels */
+.modal-label {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Inputs */
+.modal-box input[type="text"],
+.modal-box input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 6px;
+  background: rgba(255,255,255,0.92); /* clear high-contrast input */
+  color: #1b2330;
+  font-size: 0.95rem;
+}
+
+/* Show password row */
+.show-pass {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+.show-pass input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* Auth note */
+.auth-note {
+  margin: 6px 0 14px 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Actions */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancel,
+.btn-login {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  min-width: 88px;
+}
+
+.btn-cancel {
+  background: #f1f5f9;
+  color: #0f1724;
+}
+
+.btn-login {
+  background: #0b79c1;
+  color: #fff;
+}
+
+.btn-login:hover {
+  background: #0a66ad;
+}
+
+/* small screens tweak */
+@media (max-width: 420px) {
+  .modal-box { padding: 18px; width: 92%; border-radius: 12px; }
+  .btn-cancel, .btn-login { min-width: 72px; padding: 8px 12px; }
+}
+</style>
+
+</body>
+</html>

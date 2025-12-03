@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulau Perhentian - Accommodation</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Container padding  */
+    .container { max-width: 1150px; margin: 0 auto; padding: 28px 20px 80px; }
+
+    /* Two-column layout */
+    .accom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .accom-col > h3 {
+      margin: 0 0 14px;
+      color: var(--brand-dark, #0b4670);
+      font-size: 1.05rem;
+    }
+
+    /* --- Accommodatipn Card --- */
+    .accom-card {
+      display: flex;             
+      flex-direction: row;       
+      gap: 18px;                 
+      align-items: flex-start;   
+      background: var(--card-bg, #fff);
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 8px 24px rgba(6,18,30,0.06);
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid rgba(6,18,30,0.04);
+      
+      /* transition physics */
+      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                  box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                  border-color 0.2s ease;
+      
+      /* Ensure it sits nicely in the layout */
+      position: relative; 
+      z-index: 1;
+    }
+
+    /* Hover: Zoom & Expand */
+    .accom-card:hover,
+    .accom-card:focus {
+      /* Scale up (1.02) + Lift (-6px) */
+      transform: translateY(-6px) scale(1.4);
+      
+      /* shadow for 3D effect */
+      box-shadow: 0 20px 40px rgba(6,18,30,0.12);
+      
+      /*  color border highlight */
+      border-color: rgba(11, 70, 112, 0.3);
+      
+      /* Bring to front */
+      z-index: 10;
+    }
+
+    /* image pop slightly on hover */
+    .accom-card:hover .accom-thumb {
+        filter: brightness(1.05); /* Slight brightness boost */
+    }
+
+    /* thumbnail */
+    .accom-thumb {
+      width: 150px;              
+      height: 120px;             
+      object-fit: cover;         
+      border-radius: 8px;
+      flex-shrink: 0;            
+      border: 1px solid rgba(6,18,30,0.04);
+      background: #e9f6fb;
+      transition: filter 0.3s ease;
+    }
+
+    /* Info column inside card */
+    .accom-info { 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: space-between;
+      gap: 8px; 
+    }
+    
+    .accom-info h4 { margin: 0; color: var(--brand-dark, #0b4670); font-size: 1.02rem; }
+    .accom-info p { margin: 5px 0 0; color: var(--muted, #47585a); line-height:1.45; font-size: 0.95rem; }
+    .accom-info .meta { margin-top: 10px; }
+    
+    .accom-info a.btn-link {
+      display: inline-block;
+      color: var(--brand-dark, #0b4670);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .accom-info a.btn-link:hover { text-decoration: underline; }
+
+    /* Ensure spacing between each card in a column */
+    .accom-col .accom-card + .accom-card { margin-top: 18px; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .accom-grid { grid-template-columns: 1fr; } 
+    }
+    
+    @media (max-width: 450px) {
+        .accom-card { flex-direction: column; }
+        .accom-thumb { width: 100%; height: 180px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a class="brand" href="index.html">Visit Perhentian</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="activities.html">Activities</a>
+        <a href="accommodation.html" aria-current="page">Accommodation</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero" style="background-image:url('Images/perhentianPanoramic.jpg');">
+    <div class="hero-inner">
+      <h1>Handpicked Accommodations </h1>
+      <p>Curated stays across Perhentian Besar and Perhentian Kecil , from peaceful beachfront retreats to modern comforts.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="container">
+      <h2 class="section-title">Where to Stay</h2>
+      <p class="lead">Discover four handpicked places to stay on Pulau Perhentian . Two on Perhentian Besar and two on Perhentian Kecil, each offering a unique experience.</p>
+
+      <div class="accom-grid" role="list">
+        <div class="accom-col" role="listitem">
+          <h3>Perhentian Besar</h3>
+
+          <a class="accom-card" href="https://www.perhentianislandresort.my" target="_blank" rel="noopener">
+            <img class="accom-thumb" src="Images/accomodation_Perhentian besar_perhentianIslandResort.jpg" alt="Perhentian Island Resort">
+            <div class="accom-info">
+              <div>
+                <h4>Perhentian Island Resort</h4>
+                <p>From MYR 400/night</p>
+                <p>Beachfront resort surrounded by crystal-clear waters and lush jungle. Perfect for families and couples.</p>
+              </div>
+              <div class="meta"><span class="btn-link">Visit website →</span></div>
+            </div>
+          </a>
+
+          <a class="accom-card" href="https://baratperhentian.com" target="_blank" rel="noopener">
+            <img class="accom-thumb" src="Images/accomodation_Perhentian besar_theBarat.png" alt="Bharat Perhentian Resort">
+            <div class="accom-info">
+              <div>
+                <h4>Bharat Perhentian Resort</h4>
+                <p>From MYR 300/night</p>
+                <p>Modern beachfront stay with lively atmosphere. Offers snorkeling tours, sunset dining, and easy access.</p>
+              </div>
+              <div class="meta"><span class="btn-link">Visit website →</span></div>
+            </div>
+          </a>
+        </div>
+
+        <div class="accom-col" role="listitem">
+          <h3>Perhentian Kecil</h3>
+
+          <a class="accom-card" href="https://www.marriott.com/en-us/hotels/kbrpp-perhentian-marriott-resort-and-spa/overview/" target="_blank" rel="noopener">
+            <img class="accom-thumb" src="Images/accomodation_Perhentian kecil_MarriotPerhentian.jpeg" alt="Perhentian Marriott Resort & Spa">
+            <div class="accom-info">
+              <div>
+                <h4>Perhentian Marriott Resort &amp; Spa</h4>
+                <p>From MYR 800/night</p>
+                <p>Luxury resort featuring private villas, infinity pool, premium spa experiences and exclusive beach access.</p>
+              </div>
+              <div class="meta"><span class="btn-link">Visit website →</span></div>
+            </div>
+          </a>
+
+          <a class="accom-card" href="https://mimpiperhentian.com" target="_blank" rel="noopener">
+            <img class="accom-thumb" src="Images/accomodation_Perhentian kecil_mimpiPerhentian.jpg" alt="Mimpi Perhentian">
+            <div class="accom-info">
+              <div>
+                <h4>Mimpi Perhentian</h4>
+                <p>From MYR 600/night</p>
+                <p>Chic beachfront resort located steps from Long Beach. Popular for clean modern rooms and seaview rooftop.</p>
+              </div>
+              <div class="meta"><span class="btn-link">Visit website →</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>© 2025 · CSC584 NBCS2406A • Developed by Abdul Qaiyum <a href="developer.html">(About Developer)</a> for Mr. Muhd Eizan Shafiq</div>
+      <div><a class="admin-login" href="admin/login.html">Admin Login</a></div>
+    </div>
+  </footer>
+
+
+
+<!--  ADMIN LOGIN Popup-->  
+  <div id="adminModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-box" role="document" aria-labelledby="modalTitle">
+    <h2 id="modalTitle" class="modal-title">Admin Login</h2>
+
+    <label class="modal-label" for="adminUser">Username</label>
+    <input type="text" id="adminUser" placeholder="Enter username" autocomplete="username" required>
+
+    <label class="modal-label" for="adminPass">Password</label>
+    <input type="password" id="adminPass" placeholder="Enter password" autocomplete="current-password" required>
+
+    <div class="show-pass">
+      <input type="checkbox" id="togglePass">
+      <label for="togglePass" style="margin:0; color:#fff; font-weight:600;">Show Password</label>
+    </div>
+
+    <p class="auth-note">For authorized personnel only.</p>
+
+    <div class="modal-actions">
+      <button id="cancelLogin" class="btn-cancel" type="button">Cancel</button>
+      <button id="submitLogin" class="btn-login" type="button">Login</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  // Elements
+  const modal = document.getElementById('adminModal');
+  const userField = document.getElementById('adminUser');
+  const passField = document.getElementById('adminPass');
+  const togglePass = document.getElementById('togglePass');
+  const cancelBtn = document.getElementById('cancelLogin');
+  const submitBtn = document.getElementById('submitLogin');
+
+  // Helper: open modal
+  function openModal() {
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+    // small delay then focus
+    setTimeout(() => userField.focus(), 120);
+    // prevent page scroll while open
+    document.documentElement.style.overflow = 'hidden';
+  }
+
+  // Helper: close modal
+  function closeModal() {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    document.documentElement.style.overflow = '';
+  }
+
+  // Attach toggle to a variety of selectors so it works regardless of footer markup
+  function attachOpenHandlers() {
+    // explicit id or class if present
+    const byId = document.getElementById('adminLoginBtn');
+    const byClass = document.querySelectorAll('.admin-login-btn');
+    const byHref = document.querySelectorAll('a[href="#admin"], a[href="#login"]');
+
+    if (byId) byId.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+
+    byClass.forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+    byHref.forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); openModal(); }));
+
+    // Fallback: any <a> whose visible trimmed text equals "Admin Login" (case-insensitive)
+    document.querySelectorAll('a').forEach(a => {
+      try {
+        const txt = a.textContent.trim().toLowerCase();
+        if (txt === 'admin login' || txt === 'adminlogin') {
+          a.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+        }
+      } catch (err) { /* ignore */ }
+    });
+  }
+
+  // Close on backdrop click (only when clicking outside the box)
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // ESC key to close, arrow/tab behaviour kept
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('show')) return;
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Cancel button
+  cancelBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeModal();
+  });
+
+  // Show/hide password
+  togglePass.addEventListener('change', () => {
+    passField.type = togglePass.checked ? 'text' : 'password';
+  });
+
+  // Simple login check (can be replaced by real auth later)
+  submitBtn.addEventListener('click', () => {
+    const user = userField.value.trim();
+    const pass = passField.value.trim();
+    if (user === 'admin' && pass === 'admin123') {
+      // success
+      alert('Login successful');
+      closeModal();
+    } else {
+      alert('Incorrect username or password');
+      passField.focus();
+    }
+  });
+
+  // Initialize - attach open handlers after small delay to ensure DOM elements exist
+  // (works even if script runs in head/footer)
+  window.addEventListener('load', () => {
+    attachOpenHandlers();
+  });
+
+  // Also attempt to attach immediately in case DOM is already loaded
+  attachOpenHandlers();
+})();
+</script>
+
+<style>
+/* --- Overlay --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 220ms ease, visibility 220ms;
+  z-index: 2000;
+}
+
+.modal-overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* --- Glass box --- */
+.modal-box {
+  width: 360px;
+  max-width: calc(100% - 32px);
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(14px) saturate(1.06);
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 12px 40px rgba(6,18,30,0.5);
+  transform: translateY(0);
+  color: #ffffff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Title */
+.modal-title {
+  margin: 0 0 12px 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Labels */
+.modal-label {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Inputs */
+.modal-box input[type="text"],
+.modal-box input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 6px;
+  background: rgba(255,255,255,0.92); /* clear high-contrast input */
+  color: #1b2330;
+  font-size: 0.95rem;
+}
+
+/* Show password row */
+.show-pass {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+}
+
+.show-pass input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* Auth note */
+.auth-note {
+  margin: 6px 0 14px 0;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Actions */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancel,
+.btn-login {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  min-width: 88px;
+}
+
+.btn-cancel {
+  background: #f1f5f9;
+  color: #0f1724;
+}
+
+.btn-login {
+  background: #0b79c1;
+  color: #fff;
+}
+
+.btn-login:hover {
+  background: #0a66ad;
+}
+
+/* small screens tweak */
+@media (max-width: 420px) {
+  .modal-box { padding: 18px; width: 92%; border-radius: 12px; }
+  .btn-cancel, .btn-login { min-width: 72px; padding: 8px 12px; }
+}
+</style>
+
+
+</body>
+</html>
