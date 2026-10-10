@@ -1,73 +1,95 @@
-📌 Project Overview
+# Pulau Perhentian Travel Guide
 
-This project is developed as part of CSC584 — Web Programming (October 2025 – February 2026).
-It is a fully static HTML/CSS website showcasing Pulau Perhentian, featuring attractions, activities, accommodations, and a contact form.
+A static travel and tourism website for Pulau Perhentian, designed as a student project for CSC584 — Web Programming.
 
-The website is not a real commercial tourism site.
-All information and media are used strictly for educational purposes.
+This project showcases the island’s attractions, activities, accommodations, and visitor information in a polished, responsive website built with HTML, CSS, and JavaScript.
 
-⸻
+## Overview
 
-🏝️ Website Title
+Pulau Perhentian is a popular island destination in Malaysia known for its crystal-clear waters, marine life, and beach resorts. This project presents a lightweight travel guide experience, focusing on educational web development rather than commercial tourism use.
 
-Pulau Perhentian — Island Escape & Travel Guide (Student Project)
+> Note: This website is not a real commercial tourism site and all content is used strictly for academic and demonstration purposes.
 
-⸻
+## Features
 
+- Homepage with a full-screen video hero section and call-to-action buttons
+- Gallery page featuring curated island imagery and captions
+- Activities page highlighting popular experiences such as snorkeling, kayaking, jungle trekking, and scuba diving
+- Accommodation page presenting island resort options on Perhentian Besar and Perhentian Kecil
+- Contact form with HTML validation and privacy notice
+- Developer profile page
+- Privacy policy page
+- Responsive design for desktop and mobile browsing
 
-🎯 Main Features
+## Tech Stack
 
-✅ 1. Homepage with Video Hero
-	•	Background video (index_VideoHero.mp4) with glass overlay.
-	•	Clean hero text and two CTA buttons:
-	•	Uncover the Beauty → Gallery
-	•	Adventure Awaits → Activities
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- Static assets and images
 
-✅ 2. Gallery Page
-	•	8 curated Perhentian attraction photos.
-	•	Clean, responsive grid layout.
-	•	Each image has a title + short caption.
+## Project Structure
 
-✅ 3. Activities Page
-	•	4 activities in a 2×2 grid:
-	•	Kayaking
-	•	Snorkeling
-	•	Jungle Trekking
-	•	Scuba Diving
-	•	Includes persuasive marketing-style descriptions.
+```text
+.
+├── README.md
+├── index.html
+├── activities.html
+├── accommodation.html
+├── contact.html
+├── developer.html
+├── gallery.html
+├── privacy.html
+├── style.css
+├── script.js
+├── Images/
+└── .git/
+```
 
-✅ 4. Accommodation Page
-	•	Split layout: Perhentian Besar (left) and Perhentian Kecil (right)
-	•	4 resorts total.
-	•	Each displayed as a card with:
-	•	Image (left)
-	•	Text (right)
-	•	Pricing
-	•	Short description
-	•	“Visit Website →” external link
+## Running the Project Locally
 
-✅ 5. Contact Us Form
+Because this is a static website, there is no installation or build step required.
 
-Fully functional HTML form with:
-	•	Full Name (required)
-	•	Contact Number (required)
-	•	Gender (radio buttons)
-	•	Email Address (required)
-	•	“How did you know about us?” dropdown
-	•	Message box
-	•	Clear + Submit buttons
-	•	HTML required validation
-	•	Click-to-call phone number
-	•	Privacy notice with link
+### Option 1: Open in a browser
 
-✅ 6. Developer Page
-	•	Circular developer photo.
-	•	Name, ID, phone number, email.
-	•	Short bio:
-A Computer Science student at UiTM Malaysia with a passion for Data Science and Machine Learning.
-	•	Centered “profile card” layout.
+1. Clone the repository.
+2. Open `index.html` directly in your browser.
 
-✅ 7. Privacy Policy
-	•	Clear explanation of how form data is handled.
-	•	Explicit educational disclaimer:
-This website does not store or process any real personal data. It is created solely for academic purposes.
+### Option 2: Serve locally
+
+Run a local static server from the project root:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit:
+
+```text
+http://localhost:8000
+```
+
+## Pages Included
+
+- `index.html` — landing page with island overview and hero section
+- `gallery.html` — island attractions gallery
+- `activities.html` — attraction and activity information
+- `accommodation.html` — lodging options and resort details
+- `contact.html` — contact form and visitor inquiry page
+- `developer.html` — project developer profile
+- `privacy.html` — privacy and data handling information
+
+## Educational Purpose
+
+This repository was created for learning and coursework use. It demonstrates:
+
+- semantic HTML structure
+- responsive layout design
+- CSS styling and component layout
+- front-end interactivity using JavaScript
+- form implementation and accessibility considerations
+
+## Credits
+
+This project is a student web development assignment and is intended for academic learning purposes only.
+
