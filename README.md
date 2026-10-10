@@ -1,7 +1,7 @@
 📌 Project Overview
 
 This project is developed as part of CSC584 — Web Programming (October 2025 – February 2026).
-It is a fully static HTML/CSS website showcasing Pulau Perhentian, featuring attractions, activities, accommodations, a contact form, and an admin login modal.
+It is a fully static HTML/CSS website showcasing Pulau Perhentian, featuring attractions, activities, accommodations, and a contact form.
 
 The website is not a real commercial tourism site.
 All information and media are used strictly for educational purposes.
@@ -60,30 +60,14 @@ Fully functional HTML form with:
 	•	Click-to-call phone number
 	•	Privacy notice with link
 
-✅ 6. Admin Login Modal (Footer Button)
-	•	Glassmorphism modal pop-up with fade animation.
-	•	Works on all pages.
-	•	Includes:
-	•	Username
-	•	Password
-	•	Show Password checkbox
-	•	Cancel + Login buttons
-	•	Default credentials:
-	•	Username: admin
-	•	Password: admin123
-	•	Supports:
-	•	ESC to close
-	•	Click outside to close
-	•	Smooth UI animation
-
-✅ 7. Developer Page
+✅ 6. Developer Page
 	•	Circular developer photo.
 	•	Name, ID, phone number, email.
 	•	Short bio:
 A Computer Science student at UiTM Malaysia with a passion for Data Science and Machine Learning.
 	•	Centered “profile card” layout.
 
-✅ 8. Privacy Policy
+✅ 7. Privacy Policy
 	•	Clear explanation of how form data is handled.
 	•	Explicit educational disclaimer:
 This website does not store or process any real personal data. It is created solely for academic purposes.
