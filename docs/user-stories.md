@@ -34,3 +34,14 @@ Acceptance criteria:
 - Valid fictional input displays a simulated confirmation; no enquiry is sent to or stored on a server.
 
 Related requirements: FR5, FR6.
+
+## US4 - Read the privacy policy
+
+As a visitor reviewing the enquiry form, I want to open the privacy policy, so that I can understand the site's stated approach to handling contact information before entering any details.
+
+Acceptance criteria:
+- The contact page includes a link to the privacy policy.
+- Following the link opens the site's privacy policy page.
+- The project documentation explains that the current enquiry form is a demonstration without server-side delivery or storage.
+
+Related requirements: FR6, FR7.
