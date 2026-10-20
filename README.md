@@ -10,13 +10,31 @@ Pulau Perhentian is a popular island destination in Malaysia known for its cryst
 
 > Note: This website is not a real commercial tourism site and all content is used strictly for academic and demonstration purposes.
 
+## Problem statement
+
+Prospective visitors to Pulau Perhentian need an accessible overview of the islands, available activities, and accommodation options before planning a trip. When these details are spread across separate sources, visitors may spend extra time finding and comparing relevant information. This can make it harder for first-time visitors to decide what to do and where to stay. VisitPerhentian addresses this planning problem by bringing introductory destination information, activity descriptions, accommodation summaries, and a photo gallery together in one website. The project is an educational static prototype that also demonstrates an enquiry form, without providing live bookings or sending messages to a server.
+
+## Documents
+
+- [Problem statement](docs/problem-statement.md)
+- [Requirements](docs/requirements.md)
+- [User stories](docs/user-stories.md)
+
+## Status
+
+Existing CSC584 coursework prototype, reused for CSC649 Week 2 GitHub documentation practice. The enquiry form performs browser-side validation and displays a simulated confirmation; it does not send enquiries, process bookings, or take payments. Measurable non-functional requirements are targets awaiting verification.
+
+## Author
+
+Abdul Qaiyum ([qai94](https://github.com/qai94)), Universiti Teknologi MARA (UiTM).
+
 ## Features
 
-- Homepage with a full-screen video hero section and call-to-action buttons
+- Homepage with a video hero section and call-to-action buttons
 - Gallery page featuring curated island imagery and captions
 - Activities page highlighting popular experiences such as snorkeling, kayaking, jungle trekking, and scuba diving
 - Accommodation page presenting island resort options on Perhentian Besar and Perhentian Kecil
-- Contact form with HTML validation and privacy notice
+- Demonstration contact form with browser-side validation, a privacy notice, and simulated confirmation
 - Developer profile page
 - Privacy policy page
 - Responsive design for desktop and mobile browsing
@@ -33,6 +51,10 @@ Pulau Perhentian is a popular island destination in Malaysia known for its cryst
 ```text
 .
 ├── README.md
+├── docs/
+│   ├── problem-statement.md
+│   ├── requirements.md
+│   └── user-stories.md
 ├── index.html
 ├── activities.html
 ├── accommodation.html
@@ -42,8 +64,7 @@ Pulau Perhentian is a popular island destination in Malaysia known for its cryst
 ├── privacy.html
 ├── style.css
 ├── script.js
-├── Images/
-└── .git/
+└── Images/
 ```
 
 ## Running the Project Locally
